@@ -566,14 +566,15 @@ body {
 #ExperienceDiv {
     position: relative;
     padding: 3rem 1rem;
-    background-color: #29b12d;
+    background-color: #005d03bc;
+    backdrop-filter: blur(5rem);
     min-height: 100vh;
 }
 
 #ExperienceDiv h1 {
     font-family: sans-serif;
     font-weight: 500;
-    color: #1e1e1e;
+    color: #ffff;
 }
 
 #ExperienceDiv h2 {
