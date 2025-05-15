@@ -83,5 +83,12 @@ window.addEventListener('scroll', function () {
 
 
 
-
+function timeUpdate(){
+    const time = document.getElementById('time')
+        const now = new Date()
+            const timeString = now.toLocaleString();
+                time.textContent = timeString
+} 
+setInterval(timeUpdate, 1000);
+timeUpdate
 

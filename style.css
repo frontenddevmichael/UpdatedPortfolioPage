@@ -65,6 +65,7 @@ body {
     from {
         transform: translate(-50%, -50%) rotate(0deg);
     }
+
     to {
         transform: translate(-50%, -50%) rotate(180deg);
     }
@@ -74,6 +75,7 @@ body {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(-180deg);
     }
@@ -154,6 +156,7 @@ body {
 }
 
 @keyframes fadeIn {
+
     0%,
     100% {
         opacity: 0;
@@ -213,6 +216,7 @@ body {
     from {
         width: 0;
     }
+
     to {
         width: 100%;
     }
@@ -425,40 +429,6 @@ body {
     font-size: 2.5rem;
 }
 
-/* Experience Section */
-.Experience {
-    position: relative;
-    padding: 3rem 1rem;
-    background-color: #111;
-    min-height: 100vh;
-}
-
-.Experience {
-    position: relative;
-    padding: 3rem 1rem;
-    background-color: #111;
-    min-height: 100vh;
-}
-
-.Experience h3 {
-    font-family: sans-serif;
-    font-weight: 200;
-    color: #ddd;
-    text-align: center;
-}
-
-.Experience h1 {
-    font-family: sans-serif;
-    font-weight: 400;
-    color: #ddd;
-    text-align: center;
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    width: 200px;
-    max-width: 90%;
-    border-bottom: 2px solid rgb(7, 217, 7);
-    margin: 0 auto 30px;
-}
 
 
 /* Contact Section */
@@ -495,10 +465,12 @@ body {
     height: auto;
 }
 
-.nameInp{
+.nameInp {
     display: flex;
+    align-items: center;
     gap: 10px;
 }
+
 /* Contact Form Styling */
 .Contact-form {
     display: flex;
@@ -591,6 +563,129 @@ body {
     color: white;
 }
 
+#ExperienceDiv {
+    position: relative;
+    padding: 3rem 1rem;
+    background-color: #29b12d;
+    min-height: 100vh;
+}
+
+#ExperienceDiv h1 {
+    font-family: sans-serif;
+    font-weight: 500;
+    color: #1e1e1e;
+}
+
+#ExperienceDiv h2 {
+    font-family: sans-serif;
+    margin-bottom: 5rem;
+    font-weight: 100;
+    font-size: 1rem;
+}
+
+.ExpContent {
+    display: flex;
+    gap: 10rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.experiences {
+    position: relative;
+    background-color: #1b1b1b;
+    font-weight: 200;
+    color: #f0f0f0;
+    min-width: 280px;
+    max-width: 600px;
+    min-height: 180px;
+    font-size: 1rem;
+    border-radius: .2rem;
+    scale: 0.9;
+    transition: all .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.experiences:hover {
+    transform: translateY(-1rem);
+    box-shadow: 0px 0px 15px #131313;
+}
+
+
+.experiences h3 {
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: .5rem;
+    color: #1e1e1e;
+    border: 2px solid #29b12d;
+    padding: .5rem;
+    width: 30%;
+    border-radius: .2rem;
+    background-color: #29b12d;
+    border: 4px solid #29b12d;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+.experiences p {
+    color: #29b12d;
+    margin-left: 1rem;
+}
+
+.experiences ul {
+    margin: 0;
+    padding: 2rem;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    min-height: 30vh;
+    background-color: #1e1e1e;
+    flex-direction: row;
+    width: 100%;
+}
+
+#time {
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.copywright {
+    font-family: sans-serif;
+    font-weight: 200;
+    white-space: nowrap;
+    padding: 10px;
+    background-color: #333;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+}
+
+.copywright::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 4px solid #29b12d;
+    width: 0;
+    animation: lnmove 1.5s ease-in-out infinite;
+}
+
+@keyframes lnmove {
+
+    0%,
+    100% {
+        width: 0;
+    }
+
+    50% {
+        width: 100%;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .cntnt {
@@ -610,6 +705,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
     .Contact-form input,
     .Contact-form textarea {
         font-size: 0.9rem;
@@ -626,8 +722,9 @@ body {
     .info-detail span {
         font-size: 0.9rem;
     }
-    .nameInp{
-    flex-direction: column;
+
+    .nameInp {
+        flex-direction: column;
     }
 }
 
@@ -660,37 +757,37 @@ body {
         flex-direction: row;
         justify-content: space-around;
     }
-    
+
     .aboutimg {
         width: 30%;
         height: auto;
     }
-    
+
     .abouttxt {
         width: 60%;
     }
-    
+
     .nameInp {
         flex-direction: row;
     }
-    
+
     .nameInp input {
         width: 48%;
     }
-    
+
     .Contact .cntnt {
         flex-direction: row;
         justify-content: space-between;
     }
-    
+
     .Contact-form {
         width: 60%;
     }
-    
+
     .Contact-info {
         width: 35%;
     }
-    
+
     /* Card positioning for timeline */
     .card1 {
         left: 1rem;
@@ -718,23 +815,26 @@ body {
         padding: 20px 0;
         transition: all 0.3s ease;
     }
-    
+
     .linkDiv.active {
         right: 0;
     }
-    
+
     .mobile-menu-btn {
         display: block;
     }
-    
+
     .herotxt h1 {
         font-size: 1.8rem;
         white-space: normal;
         animation: none;
         border-right: none;
     }
-    
-    #about h1, .skill h1, .Experience h1, .Contact h1 {
+
+    #about h1,
+    .skill h1,
+    .Experience h1,
+    .Contact h1 {
         width: 120px;
     }
 }
@@ -743,39 +843,39 @@ body {
     .nav {
         height: 60px;
     }
-    
+
     .navname {
         font-size: 1.2rem;
     }
-    
+
     #proffesion {
         font-size: 1.2rem;
     }
-    
+
     .herotxt {
         top: 30%;
     }
-    
+
     .herotxt h1 {
         font-size: 1.5rem;
     }
-    
+
     .about-buttons a {
         width: 100%;
     }
-    
+
     .skill h3 {
         font-size: 1.2rem;
     }
-    
+
     .skills-icons {
         gap: 1rem;
     }
-    
+
     #card {
         padding: 1rem;
     }
-    
+
     #card h1 {
         font-size: 1.5rem;
     }
