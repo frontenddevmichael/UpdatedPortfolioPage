@@ -405,7 +405,8 @@ body {
 
 .ExpContent {
     display: flex;
-    gap: 10rem;
+    justify-content: center;
+    gap: 4rem;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -457,14 +458,14 @@ body {
 /* Contact Section */
 .Contact {
     background-color: #0a0a0a;
-    padding: 30px;
+    padding: 1rem;
     width: 100%;
     overflow: hidden;
 }
 
 .Contact h1 {
     border-bottom: 2px solid rgb(7, 217, 7);
-    width: 40%;
+    width: 30%;
     margin: 0 auto 20px;
     text-align: center;
     font-family: sans-serif;
@@ -496,9 +497,6 @@ body {
     border-radius: 10px;
 }
 
-.Contact-form form {
-    width: 100%;
-}
 
 .Contact-form label {
     font-size: 1rem;
@@ -527,13 +525,16 @@ body {
 .nameInp {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
+    flex: 1;
 }
 
 .Contact-form button {
-    width: 50%;
-    padding: 10px;
+    width: 80%;
+    /* white-space: nowrap; */
+    padding: .8rem;
     font-size: 1rem;
+    font-weight: 300;
     border: none;
     border-radius: 20px;
     background-color: rgb(7, 217, 7);
@@ -550,10 +551,10 @@ body {
 }
 
 .Contact-info {
-    width: 35%;
+    width: 40%;
     background-color: #1e1e1e;
     border-radius: 10px;
-    padding: 20px;
+    padding: 1rem;
 }
 
 .Contact-info h1 {
@@ -572,7 +573,8 @@ body {
 .info-detail {
     display: flex;
     align-items: center;
-    gap: 10px;
+    min-width: 100%;
+    gap: .25rem;
 }
 
 .info-detail i {
@@ -590,14 +592,15 @@ body {
 }
 
 .info-detail span {
-    padding-left: .2rem;
     font-weight: 100;
     font-size: 1rem;
 }
 
 .socials {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
     padding: 30px;
     width: 100%;
     height: auto;
@@ -634,7 +637,7 @@ footer {
     padding: 2rem;
     min-height: 20vh;
     background-color: #1e1e1e;
-    width: 100%;
+    min-width: 100%;
 }
 
 #time {
@@ -647,6 +650,7 @@ footer {
     font-weight: 200;
     white-space: nowrap;
     padding: 10px;
+    margin-bottom: 1rem;
     background-color: #333;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -760,7 +764,7 @@ footer {
     }
 
     .Contact-info {
-        width: 35%;
+        width: 40%;
     }
 
     /* Card positioning for timeline */
@@ -873,25 +877,154 @@ footer {
     }
 }
 
+
 @media (max-width: 480px) {
-    .Contact h1 {
-        width: 80%;
+    /* Navigation fixes */
+    .nav {
+        padding: 0 10px;
     }
-
-    .Contact-form input,
-    .Contact-form textarea {
-        font-size: 0.8rem;
-    }
-
-    .Contact-form button {
-        width: 90%;
-    }
-
-    .info-detail i {
+    
+    .navname {
         font-size: 1rem;
     }
+    
+    /* Hero section fixes */
+    .herotxt {
+        padding: 15px;
+        width: 95%;
+        left: 2.5%;
+    }
+    
+    .herotxt p {
+        font-size: 0.9rem;
+    }
+    
+    #arrowDown {
+        font-size: 2rem;
+    }
+    
+    /* About section fixes */
+    .abtimg {
+        max-width: 250px;
+        height: 250px;
+    }
+    
+    .abouttxt {
+        padding: 15px;
+    }
+    
+    .abouttxt p {
+        font-size: 0.9rem;
+    }
+    
+    .detail-item {
+        max-width: 100%;
+    }
+    
+    .detail-item i {
+        font-size: 1.2rem;
+    }
+    
+    /* Skills section fixes */
+    .skillcntnt {
+        padding: 15px;
+    }
+    
+    #skill-container {
+        height: 3rem;
+        padding: 0.8rem;
+    }
+    
+    .skill-icon {
+        width: 60px;
+    }
+    
+    .additional-skills i {
+        font-size: 2rem;
+    }
+    
+    /* Experience section fixes */
+    #ExperienceDiv {
+        padding: 2rem 0.5rem;
+    }
+    
+    .experiences {
+        min-width: 100%;
+        padding: 10px;
+        scale: 1;
+    }
+    
+    .experiences h3 {
+        width: 50%;
+        font-size: 0.9rem;
+    }
+    
+    .experiences ul {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Contact section fixes */
+    .Contact {
+        padding: 1rem 0.5rem;
+    }
+    
+    .Contact p {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .Contact-form button{
+        width: 90%;
+    }
+    .nameInp {
+        flex-direction: column;
+    }
+    
+    .nameInp input {
+        width: 100%;
+    }
+    
+    .info-detail{
+        width: 100%;
+        padding: 8px;
+        flex-wrap: wrap;
+    }
 
-    .info-detail span {
-        font-size: 0.8rem;
+    .info-detail span{
+        width: 100%;
+        overflow-wrap:break-word;
+        word-wrap: break-word;
+        font-size: .9rem;
+    }
+    .socials {
+        gap: 1rem;
+        padding: 15px;
+    }
+    
+    .socials i {
+        width: 2.5rem;
+    }
+    
+    /* Footer fixes */
+    footer {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    #time {
+        font-size: 0.9rem;
+    }
+    
+    .copywright {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .copywright p{
+        font-size: .7rem;
     }
 }
