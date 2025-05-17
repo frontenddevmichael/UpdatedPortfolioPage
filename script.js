@@ -1,16 +1,21 @@
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+document.onkeydown = function (e) {
+    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+        return false;
+    }
+};
+document.addEventListener('DOMContentLoaded', function () {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const linkDiv = document.querySelector('.linkDiv');
-    
-    mobileMenuBtn.addEventListener('click', function() {
+
+    mobileMenuBtn.addEventListener('click', function () {
         linkDiv.classList.toggle('active');
     });
 });
 
-window.addEventListener('load', function (){
+window.addEventListener('load', function () {
     const loader = document.querySelector('.loader')
-        loader.style.display = 'none'
+    loader.style.display = 'none'
 })
 
 
@@ -83,12 +88,12 @@ window.addEventListener('scroll', function () {
 
 
 
-function timeUpdate(){
+function timeUpdate() {
     const time = document.getElementById('time')
-        const now = new Date()
-            const timeString = now.toLocaleString();
-                time.textContent = timeString
-} 
+    const now = new Date()
+    const timeString = now.toLocaleString();
+    time.textContent = timeString
+}
 setInterval(timeUpdate, 1000);
 timeUpdate
 
