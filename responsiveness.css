@@ -275,9 +275,104 @@
     font-size: 0.95rem;
   }
 
-  .Project {
-    width: 80%;
-    margin: 0 auto;
 }
 
+@media (max-width: 1024px) {
+  .Projects {
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .Project {
+    width: 45%;
+    min-width: 300px;
+  }
+}
+
+/* Large mobile / small tablet */
+@media (max-width: 768px) {
+  .Projects {
+    gap: 1rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .Project {
+    width: 100%;
+    max-width: 400px;
+    min-width: 280px;
+    margin: 0 auto;
+  }
+
+  #ProjectDiv h1 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .Projects {
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .Project {
+    width: 100%;
+    min-width: 250px;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #ProjectDiv h1 {
+    font-size: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .Project h2 {
+    font-size: 1.25rem;
+    padding: 0 0.5rem;
+  }
+
+  .Project p {
+    font-size: 0.85rem;
+    padding: 0 1rem;
+  }
+
+  .pbtns {
+    padding: 0 1rem 1rem 1rem;
+    flex-direction: column; /* Stack buttons vertically on very small screens */
+    gap: 0.5rem;
+  }
+
+  .pbtns button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .ptech {
+    padding: 0.75rem;
+  }
+
+  .ptech span {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .Projects {
+    padding: 0.5rem;
+  }
+
+  .Project {
+    min-width: 280px;
+  }
+
+  #ProjectDiv h1 {
+    font-size: 1.25rem;
+  }
+
+  .pimage {
+    height: 160px;
+  }
 }
