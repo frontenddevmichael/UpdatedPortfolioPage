@@ -1,99 +1,84 @@
-document.addEventListener("contextmenu", (e) => e.preventDefault());
-document.onkeydown = function (e) {
-    if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-        return false;
-    }
-};
-document.addEventListener('DOMContentLoaded', function () {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const linkDiv = document.querySelector('.linkDiv');
-
-    mobileMenuBtn.addEventListener('click', function () {
-        linkDiv.classList.toggle('active');
+const buttons = document.querySelectorAll(".tab-button");
+const tabs = document.querySelectorAll(".tab-content");
+buttons.forEach((button) => {
+  button.addEventListener("click", function () {
+    buttons.forEach((btn) => {
+      btn.classList.remove("active");
     });
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    const tabId = button.getAttribute("data-tab");
+    document.getElementById(tabId).classList.add("active");
+    button.classList.add("active");
+  });
 });
 
-window.addEventListener('load', function () {
-    const loader = document.querySelector('.loader')
-    loader.style.display = 'none'
-})
+// Mobile menu toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuBtn = document.querySelector(".mobile-menu-btn");
+  const linkDiv = document.querySelector(".linkDiv");
 
+  mobileMenuBtn.addEventListener("click", function () {
+    linkDiv.classList.toggle("active");
+    mobileMenuBtn.setAttribute(
+      "aria-expanded",
+      linkDiv.classList.contains("active")
+    );
+  });
+});
 
+// Hide loader after page load
+window.addEventListener("load", function () {
+  const loader = document.querySelector(".loader");
+  if (loader) loader.style.display = "none";
+});
 
-const jobDisplay = document.getElementById('proffesion');
-
-const jobTitles = [
-    { text: "Front end Dev" },
-    { text: "Backend Dev" },
-    { text: "UI/UX Designer" }
-];
-
+// Animate job titles
+const jobDisplay = document.getElementById("proffesion");
+const jobTitles = ["Front-end Dev", "Back-end Dev", "UI/UX Designer"];
 let currentJobIndex = 0;
 
 function animateJobTitles() {
-    // Update the text
-    jobDisplay.textContent = jobTitles[currentJobIndex].text;
-
-    // Restart the CSS animation by forcing reflow
-    jobDisplay.classList.remove('fadeIn');
-    void jobDisplay.offsetWidth; // triggers reflow
-    jobDisplay.classList.add('fadeIn');
-
-    // Move to next index
+  if (jobDisplay) {
+    jobDisplay.textContent = jobTitles[currentJobIndex];
+    jobDisplay.classList.remove("fadeIn");
+    void jobDisplay.offsetWidth; // Trigger reflow
+    jobDisplay.classList.add("fadeIn");
     currentJobIndex = (currentJobIndex + 1) % jobTitles.length;
+  }
 }
 
-// Start immediately
 animateJobTitles();
+setInterval(animateJobTitles, 2500); // Run every 2.5 seconds
 
-// Run every 2.5 seconds
-setInterval(animateJobTitles, 1500);
+// Animate skill bars on scroll
+window.addEventListener("scroll", function () {
+  const skillSection = document.querySelector(".skillcntnt");
+  const bars = document.querySelectorAll(".bar");
+  const windowHeight = window.innerHeight;
 
+  if (skillSection) {
+    const distance = skillSection.getBoundingClientRect().top;
 
-
-const skill = document.querySelector('.skill')
-const distance = skill.getBoundingClientRect().top;
-let bars = document.querySelectorAll('.bar');
-const height = window.innerHeight
-for (i = 0; i < length; i++) {
-    if (distance < height - 100) {
-        let bar = bars[i];
-        let target = bar.getAttribute('data-target')
-        setTimeout(function () {
-            bar.style.width = target + "%"
-        }, 300)
-    } else {
-        for (i = 0; 1 < length; i++);
-        let bar = bars[i]
-        bar.style.width = target + '%'
-    }
-}
-window.addEventListener('scroll', function () {
-    const skill = document.querySelector('.skillcntnt');
-    const distance = skill.getBoundingClientRect().top;
-    const bars = document.querySelectorAll('.bar');
-    const height = window.innerHeight;
-
-    bars.forEach(bar => {
-        const target = bar.getAttribute('data-target');
-        if (distance < height - 70) {
-            setTimeout(() => {
-                bar.style.width = target + "%";
-            }, 300);
-        } else {
-            bar.style.width = "0%";
-        }
+    bars.forEach((bar) => {
+      const target = bar.getAttribute("data-target");
+      if (distance < windowHeight - 70) {
+        bar.style.width = target + "%";
+      } else {
+        bar.style.width = "0%";
+      }
     });
+  }
 });
 
-
-
+// Update time dynamically
 function timeUpdate() {
-    const time = document.getElementById('time')
-    const now = new Date()
-    const timeString = now.toLocaleString();
-    time.textContent = timeString
+  const timeElement = document.getElementById("time");
+  if (timeElement) {
+    const now = new Date();
+    timeElement.textContent = now.toLocaleString();
+  }
 }
 setInterval(timeUpdate, 1000);
-timeUpdate
-
+timeUpdate();

@@ -1,0 +1,277 @@
+/* Media Queries */
+
+/* >=768px (Desktop/tablet) */
+@media (min-width: 768px) {
+  .aboutcntnt {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .aboutimg {
+    width: 30%;
+    height: auto;
+  }
+  .abouttxt {
+    width: 60%;
+  }
+  .nameInp {
+    flex-direction: row;
+  }
+  .nameInp input {
+    width: 40%;
+  }
+  .Contact {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .Contact-form {
+    width: 100%;
+  }
+  .Contact-info {
+    width: 100%;
+  }
+  /* Card positioning for timeline */
+  .card1 { left: 1rem; }
+  .card2 { right: 1rem; margin-left: auto; }
+  .card3 { left: 1rem; }
+}
+
+/* <=1024px */
+@media (max-width: 1024px) {
+  .cntnt {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .Contact-form,
+  .Contact-info {
+    width: 100%;
+  }
+  .Contact-form button {
+    width:70%;
+  }
+}
+
+/* <=768px */
+@media (max-width: 768px) {
+  .tabSys {
+    width: 95%;
+    height: auto;
+    padding: 15px;
+  }
+  .tab-buttons {
+    gap: 1rem;
+  }
+  .tabSys button {
+    width: 45%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .tab-contents {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .linkDiv {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+  }
+  .linkDiv.active {
+    right: 0;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .herotxt h1 {
+    font-size: 1.8rem;
+    white-space: normal;
+    animation: none;
+    border-right: none;
+  }
+  #about h1,
+  .skill h1,
+  .Experience h1,
+  .Contact h1 {
+    width: 120px;
+  }
+}
+
+/* <=576px */
+@media (max-width: 576px) {
+  .nav {
+    height: 60px;
+  }
+  .navname {
+    font-size: 1.2rem;
+  }
+  #proffesion {
+    font-size: 1.2rem;
+  }
+  .nameInp {
+    flex-wrap: wrap;
+  }
+  .herotxt {
+    top: 30%;
+  }
+  .herotxt h1 {
+    font-size: 1.5rem;
+  }
+  .about-buttons a {
+    width: 100%;
+  }
+  .skill h3 {
+    font-size: 1.2rem;
+  }
+  .skills-icons {
+    gap: 1rem;
+  }
+  #card {
+    padding: 1rem;
+  }
+  #card h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* <=480px (Mobile) */
+@media (max-width: 480px) {
+  /* Navigation fixes */
+  .nav {
+    padding: 0 10px;
+  }
+  .navname {
+    font-size: 1rem;
+  }
+  /* Hero section fixes */
+  .herotxt {
+    padding: 15px;
+    width: 95%;
+    left: 2.5%;
+  }
+  .herotxt p {
+    font-size: 0.9rem;
+  }
+  #arrowDown {
+    font-size: 2rem;
+  }
+  /* About section fixes */
+  .abtimg {
+    max-width: 250px;
+    height: 250px;
+  }
+  .abouttxt {
+    padding: 15px;
+  }
+  .abouttxt p {
+    font-size: 0.9rem;
+  }
+  .detail-item {
+    max-width: 100%;
+  }
+  .detail-item i {
+    font-size: 1.2rem;
+  }
+  /* Skills section fixes */
+  .skillcntnt {
+    padding: 15px;
+  }
+  #skill-container {
+    height: 3rem;
+    padding: 0.8rem;
+  }
+  .skill-icon {
+    width: 60px;
+  }
+  .additional-skills i {
+    font-size: 2rem;
+  }
+  /* Experience section fixes */
+  #ExperienceDiv {
+    padding: 2rem 0.5rem;
+  }
+  .experiences {
+    min-width: 100%;
+    padding: 10px;
+    scale: 1;
+  }
+  .experiences h3 {
+    width: 50%;
+    font-size: 0.9rem;
+  }
+  .experiences ul {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  /* Contact section fixes */
+  .Contact {
+    padding: 1rem 0.5rem;
+  }
+  .Contact p {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .Contact-form button {
+    width: 90%;
+  }
+  .nameInp {
+    flex-wrap: wrap;
+  }
+  .nameInp input {
+    width: 100%;
+  }
+  .info-detail {
+    width: 100%;
+    padding: 8px;
+    flex-wrap: wrap;
+  }
+  .info-detail span {
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+  }
+  .socials {
+    gap: 1rem;
+    padding: 15px;
+  }
+  .socials i {
+    width: 2.5rem;
+  }
+  /* Footer fixes */
+  footer {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  #time {
+    font-size: 0.9rem;
+  }
+  .copywright {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+  .copywright p {
+    font-size: 0.7rem;
+  }
+  /* Tab system mobile */
+  .tab-buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .tabSys button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  .tab-contents {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+}
